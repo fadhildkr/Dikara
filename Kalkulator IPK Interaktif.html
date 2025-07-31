@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<!-- saved from url=(0053)file:///C:/Users/RAHQISYAF/Desktop/IPK.html#dashboard -->
-<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator IPK Interaktif</title>
     
     <!-- Tailwind CSS for styling -->
-    <script src="./Kalkulator IPK Interaktif_files/saved_resource"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Chart.js for data visualization -->
-    <script src="./Kalkulator IPK Interaktif_files/chart.js.download"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <!-- Lucide Icons for modern icons -->
-    <script src="./Kalkulator IPK Interaktif_files/lucide.min.js.download"></script>
+    <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
 
     <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="./Kalkulator IPK Interaktif_files/css2" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         /* Custom styles for a more polished look */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f1f5f9; /* slate-100 */
-            overflow: hidden; /* Prevent body scroll */
+            overflow-x: hidden;
         }
 
         /* Aurora Background Effect */
         body::before {
             content: '';
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -118,7 +118,7 @@
 
         /* Card styles with Glassmorphism */
         .card {
-            @apply bg-white/60 backdrop-blur-xl rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 border border-white/30;
+            @apply bg-white/60 backdrop-blur-xl rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl md:hover:-translate-y-1 border border-white/30;
         }
         
         /* Active menu item style */
@@ -129,71 +129,50 @@
             @apply transition-all duration-200 rounded-lg;
         }
     </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.relative{position:relative}.sticky{position:sticky}.top-0{top:0px}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.mr-1{margin-right:0.25rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.mr-4{margin-right:1rem}.mt-6{margin-top:1.5rem}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-20{height:5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-80{height:20rem}.h-screen{height:100vh}.max-h-80{max-height:20rem}.w-2\/5{width:40%}.w-4{width:1rem}.w-5{width:1.25rem}.w-64{width:16rem}.w-8{width:2rem}.w-full{width:100%}.w-20{width:5rem}.w-24{width:6rem}.min-w-\[800px\]{min-width:800px}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.flex-grow{flex-grow:1}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-x-4{column-gap:1rem}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-slate-200\/70 > :not([hidden]) ~ :not([hidden]){border-color:rgb(226 232 240 / 0.7)}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded-full{border-radius:9999px}.rounded{border-radius:0.25rem}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-200\/50{border-color:rgb(226 232 240 / 0.5)}.border-slate-200\/70{border-color:rgb(226 232 240 / 0.7)}.border-slate-700\/50{border-color:rgb(51 65 85 / 0.5)}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-slate-50\/50{background-color:rgb(248 250 252 / 0.5)}.bg-slate-900\/50{background-color:rgb(15 23 42 / 0.5)}.bg-slate-900\/80{background-color:rgb(15 23 42 / 0.8)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/60{background-color:rgb(255 255 255 / 0.6)}.bg-yellow-100{--tw-bg-opacity:1;background-color:rgb(254 249 195 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-indigo-600{--tw-gradient-from:#4f46e5 var(--tw-gradient-from-position);--tw-gradient-to:rgb(79 70 229 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-purple-600{--tw-gradient-to:#9333ea var(--tw-gradient-to-position)}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-2{padding:0.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.tracking-wider{letter-spacing:0.05em}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-indigo-200{--tw-text-opacity:1;color:rgb(199 210 254 / var(--tw-text-opacity, 1))}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-600{--tw-text-opacity:1;color:rgb(202 138 4 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-lg{--tw-backdrop-blur:blur(16px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-200{transition-duration:200ms}.hover\:bg-slate-700\/50:hover{background-color:rgb(51 65 85 / 0.5)}.hover\:bg-slate-500\/10:hover{background-color:rgb(100 116 139 / 0.1)}@media (min-width: 640px){.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:p-6{padding:1.5rem}}@media (min-width: 768px){.md\:p-8{padding:2rem}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:col-span-3{grid-column:span 3 / span 3}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}}</style></head>
-<body class="flex h-screen overflow-hidden">
+</head>
+<body class="relative min-h-screen">
+    <div class="relative flex min-h-screen">
+        <!-- Overlay for mobile sidebar -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-30 hidden md:hidden"></div>
 
-    <!-- Sidebar Navigation -->
-    <aside class="w-64 bg-slate-900/80 backdrop-blur-lg text-slate-200 flex-shrink-0 flex flex-col transition-all duration-300 border-r border-white/10">
-        <div class="h-20 flex items-center justify-center bg-slate-900/50">
-            <i data-lucide="graduation-cap" class="w-8 h-8 mr-3 text-indigo-400"></i>
-            <h1 class="text-xl font-bold text-slate-100">Kalkulator IPK</h1>
-        </div>
-        <nav id="menu" class="flex-grow p-4 space-y-2">
-            <a href="file:///C:/Users/RAHQISYAF/Desktop/IPK.html#dashboard" class="menu-item flex items-center px-4 py-2.5 hover:bg-slate-700/50 active">
-                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i> Dashboard
-            </a>
-            <div class="pt-4">
-                <h2 class="px-4 text-sm font-semibold text-slate-500 uppercase tracking-wider">Semester</h2>
-                <!-- Semester links will be generated by JS -->
-            </div>
-        <div class="space-y-2"><a href="file:///C:/Users/RAHQISYAF/Desktop/IPK.html#semester-1" class="menu-item flex items-center px-4 py-2.5"><i data-lucide="book" class="w-5 h-5 mr-3"></i> Semester 1</a><a href="file:///C:/Users/RAHQISYAF/Desktop/IPK.html#semester-2" class="menu-item flex items-center px-4 py-2.5"><i data-lucide="book" class="w-5 h-5 mr-3"></i> Semester 2</a><a href="file:///C:/Users/RAHQISYAF/Desktop/IPK.html#semester-3" class="menu-item flex items-center px-4 py-2.5"><i data-lucide="book" class="w-5 h-5 mr-3"></i> Semester 3</a><a href="file:///C:/Users/RAHQISYAF/Desktop/IPK.html#semester-4" class="menu-item flex items-center px-4 py-2.5"><i data-lucide="book" class="w-5 h-5 mr-3"></i> Semester 4</a><a href="file:///C:/Users/RAHQISYAF/Desktop/IPK.html#semester-5" class="menu-item flex items-center px-4 py-2.5"><i data-lucide="book" class="w-5 h-5 mr-3"></i> Semester 5</a><a href="file:///C:/Users/RAHQISYAF/Desktop/IPK.html#semester-6" class="menu-item flex items-center px-4 py-2.5"><i data-lucide="book" class="w-5 h-5 mr-3"></i> Semester 6</a><a href="file:///C:/Users/RAHQISYAF/Desktop/IPK.html#semester-7" class="menu-item flex items-center px-4 py-2.5"><i data-lucide="book" class="w-5 h-5 mr-3"></i> Semester 7</a><a href="file:///C:/Users/RAHQISYAF/Desktop/IPK.html#semester-8" class="menu-item flex items-center px-4 py-2.5"><i data-lucide="book" class="w-5 h-5 mr-3"></i> Semester 8</a></div></nav>
-        <div class="p-4 border-t border-slate-700/50 text-center text-xs text-slate-400">
-            <p>© 2024 Dibuat untuk Anda</p>
-        </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="flex-1 flex flex-col overflow-y-auto">
-        <div id="app" class="p-4 sm:p-6 md:p-8">
-            <div class="view">
-                <h1 class="text-4xl font-extrabold text-slate-800 mb-2">Dashboard</h1>
-                <p class="text-slate-500 mb-8">Ringkasan performa akademik Anda secara keseluruhan.</p>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                    <!-- IPK Card -->
-                    <div class="card p-6 flex flex-col justify-center items-center bg-gradient-to-br from-indigo-600 to-purple-600 text-white shadow-2xl">
-                        <h3 class="text-lg font-medium text-indigo-200">IPK Saat Ini</h3>
-                        <p id="dashboard-ipk" class="text-5xl font-extrabold">3.71</p>
-                    </div>
-                    <!-- Other cards -->
-                    <div class="card p-6">
-                        <div class="flex items-center"><div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4"><i data-lucide="book-copy"></i></div><div><h3 class="text-sm font-medium text-slate-500">Total SKS Lulus</h3><p id="dashboard-sks" class="text-2xl font-bold text-slate-800">25</p></div></div>
-                    </div>
-                    <div class="card p-6">
-                         <div class="flex items-center"><div class="p-3 rounded-full bg-green-100 text-green-600 mr-4"><i data-lucide="book-open-check"></i></div><div><h3 class="text-sm font-medium text-slate-500">Total Mata Kuliah</h3><p id="dashboard-matkul" class="text-2xl font-bold text-slate-800">13</p></div></div>
-                    </div>
-                    <div class="card p-6">
-                         <div class="flex items-center"><div class="p-3 rounded-full bg-yellow-100 text-yellow-600 mr-4"><i data-lucide="award"></i></div><div><h3 class="text-sm font-medium text-slate-500">Predikat Kelulusan</h3><p id="dashboard-predikat" class="text-xl font-bold text-slate-800">Dengan Pujian</p></div></div>
-                    </div>
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-slate-900/80 backdrop-blur-lg text-slate-200 flex-shrink-0 flex flex-col transition-transform duration-300 ease-in-out z-40 -translate-x-full md:relative md:translate-x-0 border-r border-white/10">
+            <div class="h-20 flex items-center justify-between px-4 bg-slate-900/50">
+                <div class="flex items-center">
+                    <i data-lucide="graduation-cap" class="w-8 h-8 mr-3 text-indigo-400"></i>
+                    <h1 class="text-xl font-bold text-slate-100">Kalkulator IPK</h1>
                 </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
-                    <!-- Chart -->
-                    <div class="lg:col-span-3 card p-6">
-                        <h2 class="text-xl font-bold text-slate-800 mb-4">Grafik Tren IPS</h2>
-                        <div class="relative h-80"><canvas id="ipsChart" width="899" height="320" style="display: block; box-sizing: border-box; height: 320px; width: 899px;"></canvas></div>
-                    </div>
-                    <!-- Summary Table -->
-                    <div class="lg:col-span-2 card p-6">
-                        <h2 class="text-xl font-bold text-slate-800 mb-4">Ringkasan Semester</h2>
-                        <div class="overflow-y-auto max-h-80">
-                            <table class="w-full text-left"><thead class="sticky top-0 bg-white/60 backdrop-blur-lg"><tr class="border-b-2 border-slate-200"><th class="py-3 px-2 text-sm font-semibold text-slate-600">Semester</th><th class="py-3 px-2 text-center text-sm font-semibold text-slate-600">IPS</th><th class="py-3 px-2 text-center text-sm font-semibold text-slate-600">SKS</th></tr></thead><tbody id="dashboard-summary-table"><tr class="border-b border-slate-200/50 animate-slide-in" style="animation-delay: 0ms;"><td class="py-3 px-2 text-slate-700">Semester 1</td><td class="py-3 px-2 text-center font-semibold text-green-600">3.67</td><td class="py-3 px-2 text-center text-slate-600">20</td></tr><tr class="border-b border-slate-200/50 animate-slide-in" style="animation-delay: 50ms;"><td class="py-3 px-2 text-slate-700">Semester 2</td><td class="py-3 px-2 text-center font-semibold text-green-600">3.85</td><td class="py-3 px-2 text-center text-slate-600">5</td></tr></tbody></table>
-                        </div>
-                    </div>
-                </div>
+                <button id="close-sidebar-btn" class="md:hidden p-1 text-slate-400 hover:text-white">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
             </div>
-        </div>
-    </main>
+            <nav id="menu" class="flex-grow p-4 space-y-2 overflow-y-auto">
+                <a href="#dashboard" class="menu-item flex items-center px-4 py-2.5 hover:bg-slate-700/50">
+                    <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i> Dashboard
+                </a>
+                <div class="pt-4">
+                    <h2 class="px-4 text-sm font-semibold text-slate-500 uppercase tracking-wider">Semester</h2>
+                    <!-- Semester links will be generated by JS -->
+                </div>
+            </nav>
+            <div class="p-4 border-t border-slate-700/50 text-center text-xs text-slate-400">
+                <p>&copy; 2024 Dibuat untuk Anda</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-y-auto">
+            <header class="sticky top-0 md:hidden h-16 bg-white/60 backdrop-blur-lg border-b border-white/30 z-20 flex items-center px-4">
+                <button id="open-sidebar-btn" class="p-2 text-slate-700">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </header>
+            <div id="app" class="p-4 sm:p-6 md:p-8">
+                <!-- Initial content will be rendered here -->
+            </div>
+        </main>
+    </div>
+
 
     <!-- Templates for Views (hidden by default) -->
     <div id="templates" class="hidden">
@@ -201,7 +180,7 @@
         <!-- Dashboard View Template -->
         <div id="dashboard-template">
             <div class="view">
-                <h1 class="text-4xl font-extrabold text-slate-800 mb-2">Dashboard</h1>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Dashboard</h1>
                 <p class="text-slate-500 mb-8">Ringkasan performa akademik Anda secara keseluruhan.</p>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -211,30 +190,16 @@
                         <p id="dashboard-ipk" class="text-5xl font-extrabold">0.00</p>
                     </div>
                     <!-- Other cards -->
-                    <div class="card p-6">
-                        <div class="flex items-center"><div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4"><i data-lucide="book-copy"></i></div><div><h3 class="text-sm font-medium text-slate-500">Total SKS Lulus</h3><p id="dashboard-sks" class="text-2xl font-bold text-slate-800">0</p></div></div>
-                    </div>
-                    <div class="card p-6">
-                         <div class="flex items-center"><div class="p-3 rounded-full bg-green-100 text-green-600 mr-4"><i data-lucide="book-open-check"></i></div><div><h3 class="text-sm font-medium text-slate-500">Total Mata Kuliah</h3><p id="dashboard-matkul" class="text-2xl font-bold text-slate-800">0</p></div></div>
-                    </div>
-                    <div class="card p-6">
-                         <div class="flex items-center"><div class="p-3 rounded-full bg-yellow-100 text-yellow-600 mr-4"><i data-lucide="award"></i></div><div><h3 class="text-sm font-medium text-slate-500">Predikat Kelulusan</h3><p id="dashboard-predikat" class="text-xl font-bold text-slate-800">-</p></div></div>
-                    </div>
+                    <div class="card p-6"><div class="flex items-center"><div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4"><i data-lucide="book-copy"></i></div><div><h3 class="text-sm font-medium text-slate-500">Total SKS Lulus</h3><p id="dashboard-sks" class="text-2xl font-bold text-slate-800">0</p></div></div></div>
+                    <div class="card p-6"><div class="flex items-center"><div class="p-3 rounded-full bg-green-100 text-green-600 mr-4"><i data-lucide="book-open-check"></i></div><div><h3 class="text-sm font-medium text-slate-500">Total Mata Kuliah</h3><p id="dashboard-matkul" class="text-2xl font-bold text-slate-800">0</p></div></div></div>
+                    <div class="card p-6"><div class="flex items-center"><div class="p-3 rounded-full bg-yellow-100 text-yellow-600 mr-4"><i data-lucide="award"></i></div><div><h3 class="text-sm font-medium text-slate-500">Predikat Kelulusan</h3><p id="dashboard-predikat" class="text-xl font-bold text-slate-800">-</p></div></div></div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <!-- Chart -->
-                    <div class="lg:col-span-3 card p-6">
-                        <h2 class="text-xl font-bold text-slate-800 mb-4">Grafik Tren IPS</h2>
-                        <div class="relative h-80"><canvas id="ipsChart"></canvas></div>
-                    </div>
+                    <div class="lg:col-span-3 card p-6"><h2 class="text-xl font-bold text-slate-800 mb-4">Grafik Tren IPS</h2><div class="relative h-80"><canvas id="ipsChart"></canvas></div></div>
                     <!-- Summary Table -->
-                    <div class="lg:col-span-2 card p-6">
-                        <h2 class="text-xl font-bold text-slate-800 mb-4">Ringkasan Semester</h2>
-                        <div class="overflow-y-auto max-h-80">
-                            <table class="w-full text-left"><thead class="sticky top-0 bg-white/60 backdrop-blur-lg"><tr class="border-b-2 border-slate-200"><th class="py-3 px-2 text-sm font-semibold text-slate-600">Semester</th><th class="py-3 px-2 text-center text-sm font-semibold text-slate-600">IPS</th><th class="py-3 px-2 text-center text-sm font-semibold text-slate-600">SKS</th></tr></thead><tbody id="dashboard-summary-table"></tbody></table>
-                        </div>
-                    </div>
+                    <div class="lg:col-span-2 card p-6"><h2 class="text-xl font-bold text-slate-800 mb-4">Ringkasan Semester</h2><div class="overflow-y-auto max-h-80"><table class="w-full text-left"><thead class="sticky top-0 bg-white/60 backdrop-blur-lg"><tr class="border-b-2 border-slate-200"><th class="py-3 px-2 text-sm font-semibold text-slate-600">Semester</th><th class="py-3 px-2 text-center text-sm font-semibold text-slate-600">IPS</th><th class="py-3 px-2 text-center text-sm font-semibold text-slate-600">SKS</th></tr></thead><tbody id="dashboard-summary-table"></tbody></table></div></div>
                 </div>
             </div>
         </div>
@@ -242,17 +207,17 @@
         <!-- Semester View Template -->
         <div id="semester-template">
             <div class="view">
-                <h1 class="text-4xl font-extrabold text-slate-800 mb-2">Semester <span class="semester-number"></span></h1>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Semester <span class="semester-number"></span></h1>
                 <p class="text-slate-500 mb-8">Masukkan mata kuliah dan nilai untuk menghitung IPS Anda.</p>
                 
                 <div class="card">
                     <div class="overflow-x-auto">
                         <table class="w-full min-w-[800px]"><thead class="bg-slate-50/50"><tr class="border-b border-slate-200/50"><th class="p-4 text-left text-sm font-semibold text-slate-600 uppercase tracking-wider w-2/5">Mata Kuliah</th><th class="p-4 text-center text-sm font-semibold text-slate-600 uppercase tracking-wider">SKS</th><th class="p-4 text-center text-sm font-semibold text-slate-600 uppercase tracking-wider">Nilai Angka</th><th class="p-4 text-center text-sm font-semibold text-slate-600 uppercase tracking-wider">Nilai Huruf</th><th class="p-4 text-center text-sm font-semibold text-slate-600 uppercase tracking-wider">Bobot</th><th class="p-4 text-center text-sm font-semibold text-slate-600 uppercase tracking-wider">Kualitas</th><th class="p-4 text-center text-sm font-semibold text-slate-600 uppercase tracking-wider action-header">Aksi</th></tr></thead><tbody class="semester-table-body bg-white divide-y divide-slate-200/70"></tbody></table>
                     </div>
-                     <div class="p-4 bg-slate-50/50 border-t border-slate-200/70 flex justify-between items-center">
-                        <div class="normal-view-controls flex items-center gap-x-4"><button class="btn btn-primary add-course-btn"><i data-lucide="plus" class="inline-block w-4 h-4 mr-1"></i>Tambah</button><button class="btn btn-secondary toggle-delete-mode-btn"><i data-lucide="trash" class="inline-block w-4 h-4 mr-1"></i>Hapus</button></div>
-                        <div class="delete-mode-controls hidden flex items-center gap-x-4"><button class="btn btn-danger confirm-delete-btn"><i data-lucide="check" class="inline-block w-4 h-4 mr-1"></i>Hapus yang Dipilih</button><button class="btn btn-muted cancel-delete-mode-btn"><i data-lucide="x" class="inline-block w-4 h-4 mr-1"></i>Batal</button></div>
-                        <div class="flex items-center space-x-8 text-right"><div><p class="text-sm text-slate-500">Total SKS</p><p class="total-sks text-2xl font-bold text-slate-800">0</p></div><div><p class="text-sm text-slate-500">Indeks Prestasi Semester (IPS)</p><p class="ips-value text-2xl font-bold text-indigo-600">0.00</p></div></div>
+                     <div class="p-4 bg-slate-50/50 border-t border-slate-200/70 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div class="normal-view-controls flex items-center gap-x-2 sm:gap-x-4"><button class="btn btn-primary add-course-btn text-sm sm:text-base"><i data-lucide="plus" class="inline-block w-4 h-4 mr-1"></i>Tambah</button><button class="btn btn-secondary toggle-delete-mode-btn text-sm sm:text-base"><i data-lucide="trash" class="inline-block w-4 h-4 mr-1"></i>Hapus</button></div>
+                        <div class="delete-mode-controls hidden flex items-center gap-x-2 sm:gap-x-4"><button class="btn btn-danger confirm-delete-btn text-sm sm:text-base"><i data-lucide="check" class="inline-block w-4 h-4 mr-1"></i>Hapus Dipilih</button><button class="btn btn-muted cancel-delete-mode-btn text-sm sm:text-base"><i data-lucide="x" class="inline-block w-4 h-4 mr-1"></i>Batal</button></div>
+                        <div class="flex items-center space-x-4 sm:space-x-8 text-right"><div><p class="text-xs sm:text-sm text-slate-500">Total SKS</p><p class="total-sks text-xl sm:text-2xl font-bold text-slate-800">0</p></div><div><p class="text-xs sm:text-sm text-slate-500">IPS</p><p class="ips-value text-xl sm:text-2xl font-bold text-indigo-600">0.00</p></div></div>
                     </div>
                 </div>
                  <div class="mt-6 text-sm text-slate-500 flex items-center"><i data-lucide="info" class="inline-block w-4 h-4 mr-2 flex-shrink-0"></i><span><strong>Tips:</strong> Semua perubahan disimpan secara otomatis di browser Anda.</span></div>
@@ -541,9 +506,40 @@
                 menuContainer.appendChild(semesterList);
             };
             
+            // --- MOBILE SIDEBAR LOGIC ---
+            const initMobileSidebar = () => {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('sidebar-overlay');
+                const openBtn = document.getElementById('open-sidebar-btn');
+                const closeBtn = document.getElementById('close-sidebar-btn');
+                const menuLinks = document.querySelectorAll('#menu a');
+
+                const openSidebar = () => {
+                    sidebar.classList.remove('-translate-x-full');
+                    overlay.classList.remove('hidden');
+                };
+
+                const closeSidebar = () => {
+                    sidebar.classList.add('-translate-x-full');
+                    overlay.classList.add('hidden');
+                };
+
+                openBtn.addEventListener('click', openSidebar);
+                closeBtn.addEventListener('click', closeSidebar);
+                overlay.addEventListener('click', closeSidebar);
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth < 768) {
+                            closeSidebar();
+                        }
+                    });
+                });
+            };
+
             // --- INITIALIZATION ---
             const init = () => {
                 initMenu();
+                initMobileSidebar();
                 renderApp();
                 window.addEventListener('hashchange', renderApp);
             };
@@ -551,6 +547,5 @@
             init();
         };
     </script>
-
-
-</body></html>
+</body>
+</html>
